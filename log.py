@@ -7,8 +7,6 @@ import joblib
 
 st.set_page_config(page_title='Logestic reg',page_icon = '📈',layout='wide')
 
-df = pd.read_csv("D:\\Machine_learning\\Logestic_reg\\HR_comma_sep.csv")
-
 left = df[df.left==1].drop(['Department','salary','left'],axis='columns')
 
 retained = df[df.left==0].drop(['Department','salary','left'],axis='columns')
@@ -99,9 +97,9 @@ log_reg
         """)
 
 # loading model and encodded objects
-reg = joblib.load("D:\\Machine_learning\\Logestic_reg\\log_reg.joblib")
-ohe = joblib.load("D:\\Machine_learning\\Logestic_reg\\ohe.joblib")
-lab = joblib.load("D:\\Machine_learning\\Logestic_reg\\label.joblib")
+reg = joblib.load("log_reg.joblib")
+ohe = joblib.load("ohe.joblib")
+lab = joblib.load("label.joblib")
 
 st.subheader('Model accuracy')
-st.code(reg.score(pd.read_csv("Logestic_reg//x_test.csv"),pd.read_csv('Logestic_reg/y_test.csv')))
+st.code(reg.score(pd.read_csv("x_test.csv"),pd.read_csv('y_test.csv')))

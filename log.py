@@ -5,7 +5,7 @@ import numpy as np
 import joblib
 
 
-st.set_page_config(page_title='Logestic reg',page_icon = '📈',layout='wide')
+st.set_page_config(page_title='Logestic reg',page_icon = '📈',layout='centered')
 df = pd.read_csv("HR_comma_sep.csv")
 
 left = df[df.left==1].drop(['Department','salary','left'],axis='columns')
